@@ -1,6 +1,6 @@
 #!/bin/bash
 IMAGE_NAME=gamswine
-VERSION=24.2.2
+VERSION=24.2.3
 FULL_NAME=starfox/${IMAGE_NAME}:${VERSION}
 
 # Build base image
