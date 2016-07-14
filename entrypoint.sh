@@ -7,11 +7,7 @@ if [ ! -f "/home/gamsuser/.gams_is_installed" ]; then
 	touch /home/gamsuser/.gams_is_installed
 fi 
 
-#echo "$@"
-
-if [ $# -lt 1 ]; then
-	exec "/usr/bin/wine /home/gamsuser/.wine/drive_c/GAMS/win32/24.5/gamside.exe"
-else
-	exec "$@"
-fi
+echo "$@"
+#exec "/usr/bin/wine /home/gamsuser/.wine/drive_c/GAMS/win32/24.2/gamside.exe"
+exec "$@"
 
