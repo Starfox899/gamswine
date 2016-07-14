@@ -10,8 +10,8 @@ fi
 #echo "$@"
 
 if [ $# -lt 1 ]; then
-	exec "/usr/bin/wine /home/gamsuser/.wine/drive_c/GAMS/win32/24.5/gamside.exe"
+	exec /usr/bin/wine /home/gamsuser/.wine/drive_c/GAMS/win32/24.7/gamside.exe
 else
-	exec "$@"
+	exec $@
 fi
 
