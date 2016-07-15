@@ -5,7 +5,7 @@ This is a docker conatiner to run GAMS and GAMSIDE via wine for linux users.
 # Initial setup (one-time action)
 
 ```
-# Define version you want and nee
+# Define version you want and need
 IMAGE_NAME=gamswine
 VERSION=24.7.3
 FULL_NAME=docker.io/starfox/${IMAGE_NAME}:${VERSION}
