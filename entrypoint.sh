@@ -10,7 +10,9 @@ fi
 #echo "$@"
 
 if [ $# -lt 1 ]; then
-	exec /usr/bin/wine /home/gamsuser/.wine/drive_c/GAMS/win32/24.7/gamside.exe
+	GAMSIDE=`find / -iname gamside.exe 2>/dev/null | sort -r | head -n 1`
+	echo "GAMSIDE found at ${GAMSIDE}"
+	exec /usr/bin/wine ${GAMSIDE}
 else
 	exec $@
 fi
