@@ -35,6 +35,6 @@ COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 USER gamsuser
 WORKDIR /home/gamsuser
 # Deactivated GAMS-Installation during image creation for the moment
-RUN xvfb-run -a wine windows_x86_32.exe /SP- /SILENT && touch /home/gamsuser/.gams_is_installed
+#RUN xvfb-run -a wine windows_x86_32.exe /SP- /SILENT && touch /home/gamsuser/.gams_is_installed
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
