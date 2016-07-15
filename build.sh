@@ -4,7 +4,8 @@ VERSION=24.7.3
 FULL_NAME=starfox/${IMAGE_NAME}:${VERSION}
 
 # Build base image
-docker build --no-cache -t ${FULL_NAME} .
+#docker build --no-cache -t ${FULL_NAME} .
+docker build -t ${FULL_NAME} .
 
 # Run base image for the first time, this will install GAMS automatically
 docker rm "${IMAGE_NAME}_${VERSION}"
