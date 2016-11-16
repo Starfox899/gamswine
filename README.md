@@ -18,7 +18,7 @@ docker pull ${FULL_NAME}
 # docker rm "${IMAGE_NAME}_${VERSION}"
 
 # Create GAMSIDE-Container for first time
-docker run -it --name "${IMAGE_NAME}_${VERSION}" -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix:ro ${FULL_NAME} 
+docker run -it --ipc=host --name "${IMAGE_NAME}_${VERSION}" -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix:ro ${FULL_NAME} 
 ```
 The container will automatically start the installation of GAMS and its dependencies. Please hit "Install" once asked.
 
