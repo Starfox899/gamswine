@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 set -e
 
@@ -7,12 +7,17 @@ VERSION=latest
 FULL_NAME=starfox/${IMAGE_NAME}:${VERSION}
 
 # Build base image
-if [ $# > 0 ];
-then if [ $1 = '--no-cache' ]; then
+if [ $# -gt 0 ]; then 
+	if [ "$1" == "--no-cache" ]; then
 		docker build --no-cache -t ${FULL_NAME} .
-	else
-		docker build -t ${FULL_NAME} .
+	elif [ "$1" == "--version" ]; then
+		VERSION=$2
+		FULL_NAME=starfox/${IMAGE_NAME}:${VERSION}
+		echo ${VERSION}
+		docker build -t ${FULL_NAME} -f Dockerfile.${VERSION} .
 	fi
+else
+	docker build -t ${FULL_NAME} .
 fi
 
 # Run base image for the first time, this will install GAMS automatically
