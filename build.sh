@@ -21,7 +21,9 @@ else
 fi
 
 # Run base image for the first time, this will install GAMS automatically
-docker rm "${IMAGE_NAME}_${VERSION}"
+if [ `docker ps -a |grep "${IMAGE_NAME}_${VERSION}" | wc -l` -gt 0 ]; then
+	docker rm "${IMAGE_NAME}_${VERSION}"
+fi
 docker run -it --ipc=host --name "${IMAGE_NAME}_${VERSION}" -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix:ro ${FULL_NAME} 
 
 # Restart container
